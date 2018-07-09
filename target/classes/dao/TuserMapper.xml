@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.TuserMapper">
+    <select id="queryCount" resultType="int">
+       SELECT age FROM user where userName='张三'
+    </select>
+    <select id="findAll" resultType="List">
+        select * from contacts
+    </select>
+    <insert id="addContact" parameterType="contacts.Contact">
+        insert into contacts (firstName, lastName, phoneNumber, emailAddress)
+        values (#{firstName}, #{lastName}, #{phoneNumber}, #{emailAddress})
+    </insert>
+</mapper>
